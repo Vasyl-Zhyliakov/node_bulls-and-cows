@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 /**
@@ -10,26 +11,26 @@
  */
 function checkIsValidUserInput(userInput) {
   if (userInput.length > 4) {
-    // console.log('There are too many digits!');
+    console.log('There are too many digits!');
 
     return false;
   }
 
   if (userInput.length < 4) {
-    // console.log('There are need more digits!');
+    console.log('There are need more digits!');
 
     return false;
   }
 
   if (userInput[0] === '0') {
-    // console.log("First digit can't be '0'!");
+    console.log("First digit can't be '0'!");
 
     return false;
   }
 
   for (const char of userInput) {
     if (isNaN(+char)) {
-      // console.log('Input must contain only digits!');
+      console.log('Input must contain only digits!');
 
       return false;
     }
@@ -38,7 +39,7 @@ function checkIsValidUserInput(userInput) {
   const uniqueDigits = new Set(userInput);
 
   if (uniqueDigits.size < 4) {
-    // console.log('All digits must be unique!');
+    console.log('All digits must be unique!');
 
     return false;
   }

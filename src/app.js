@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 const readline = require('readline');
@@ -20,10 +21,13 @@ function askPlayer() {
     }
 
     if (digits === newNumber) {
-      // console.log('You win. Congratulations!!!');
+      console.log('You win. Congratulations!!!');
+
       terminal.close();
     } else {
-      getBullsAndCows(digits, newNumber);
+      const { cows, bulls } = getBullsAndCows(digits, newNumber);
+
+      console.log(`There are ${cows} cows and ${bulls} bulls`);
       askPlayer();
     }
   });
